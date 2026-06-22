@@ -19,6 +19,6 @@ namespace PizzaDelivery.Domain.Models
         /// <summary>
         /// Пиццы в заказе
         /// </summary>
-        public Pizza Pizza { get; set; }
+        public List<Pizza> Pizzas { get; set; } = new();
     }
 }

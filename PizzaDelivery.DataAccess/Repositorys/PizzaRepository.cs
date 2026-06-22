@@ -20,7 +20,7 @@ namespace PizzaDelivery.DataAccess.Repositorys
                 },
                 new  Pizza
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Пицца с ананасами",
                     Description = "Вкусные ананасы!",
                     Ingridients = new List<EIngridient>() { EIngridient.Pineapples, EIngridient.Cheese },
@@ -28,7 +28,7 @@ namespace PizzaDelivery.DataAccess.Repositorys
                 },
                 new  Pizza
                 {
-                    Id = 1,
+                    Id = 3,
                     Name = "Пицца с оливками",
                     Description = "Вкус греции!",
                     Ingridients = new List<EIngridient>() { EIngridient.Olives, EIngridient.Onion },

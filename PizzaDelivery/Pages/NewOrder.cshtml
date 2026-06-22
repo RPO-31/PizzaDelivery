@@ -1,0 +1,54 @@
+@page "/new-order"
+@model NewOrderModel
+@{
+    ViewData["Title"] = "Новый заказ";
+}
+
+<h1 class="display-5">Новый заказ</h1>
+
+@if (Model.Order is not null)
+{
+    <dl class="row">
+        <dt class="col-sm-3">Id заказа</dt>
+        <dd class="col-sm-9">@Model.Order.Id</dd>
+
+        <dt class="col-sm-3">Статус заказа</dt>
+        <dd class="col-sm-9">@Model.Order.OrderStatus</dd>
+
+        <dt class="col-sm-3">Id клиента</dt>
+        <dd class="col-sm-9">@Model.Order.Customer.Id</dd>
+
+        <dt class="col-sm-3">Имя клиента</dt>
+        <dd class="col-sm-9">@Model.Order.Customer.Name</dd>
+
+        <dt class="col-sm-3">Адрес клиента</dt>
+        <dd class="col-sm-9">@Model.Order.Customer.Address</dd>
+    </dl>
+
+    <h2 class="h4">Пиццы</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Ингредиенты</th>
+                <th>Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pizza in Model.Order.Pizzas)
+            {
+                <tr>
+                    <td>@pizza.Id</td>
+                    <td>@pizza.Name</td>
+                    <td>@pizza.Description</td>
+                    <td>@string.Join(", ", pizza.Ingridients)</td>
+                    <td>@pizza.Price руб.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-page="/Index" class="btn btn-secondary">Вернуться на главную</a>
+}
