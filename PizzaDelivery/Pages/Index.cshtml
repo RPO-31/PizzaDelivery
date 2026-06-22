@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Создание заказа</h1>
+    <form method="post">
+        <div>
+            <label>Клиент</label>
+            <select asp-for="Order.Customer">
+                @foreach (var item in Model.Customers)
+                        {
+                            <option value="@item">@item.Name</option>
+                        }
+            </select>
+        </div>
+
+        <div>
+            <label>Пицца</label>
+            <select asp-for="Order.Pizza">
+                @foreach (var item in Model.Pizzas)
+                {
+                    <option value="@item">@item.Name</option>
+                }
+            </select>
+        </div>
+
+        <button type="submit">Создать заказ</button>
+    </form>
+</div>

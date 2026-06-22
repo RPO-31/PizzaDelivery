@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PizzaDelivery.DataAccess/PizzaDelivery.DataAccess.csproj" />
+  <Project Path="PizzaDelivery.Domain/PizzaDelivery.Domain.csproj" />
+  <Project Path="PizzaDelivery/PizzaDelivery.csproj" />
+</Solution>
